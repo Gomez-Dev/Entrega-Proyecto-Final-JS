@@ -1,4 +1,4 @@
-window.onload = () => {
+// window.onload = () => {}
 
     // variables
     
@@ -9,15 +9,20 @@ window.onload = () => {
     let productosCarrito = [];
     
     
-    // Agrga y elimina Productos del carrito
+    // Agrega y elimina Productos del carrito
     registrarEventListeners();
     function registrarEventListeners() {
         listaCarrito.addEventListener("click", agregarProductos);
     
         carrito.addEventListener("click", eliminarProducto);
+
+        vaciarCarritobtn.addEventListener("click", () => {
+            productosCarrito = []; 
+            limpiarHTML();
+        })
     
-        document.addEventListener("DOMcontentLoaded", () => {
-            productosCarrito = JSON.pasrse(localStorage.getItem("carrito")) || [];
+        document.addEventListener("DOMContentLoaded", () => {
+            productosCarrito = JSON.parse( localStorage.getItem ("carrito")) || [];
         })
         carritoHTML();
     }
@@ -35,7 +40,8 @@ window.onload = () => {
     function eliminarProducto(e) {
         if(e.target.classList.contains("borrar-producto")) {
             const productoId =e.target.getAttribute("data-id");
-    
+            
+            //Elimina del carrito por id
             productosCarrito = productosCarrito.filter( producto => producto.id !== productoId);
             console.log(productosCarrito);
             carritoHTML ();
@@ -43,39 +49,61 @@ window.onload = () => {
         }
     }
     // Obteniendo datos del Producto
-    function datosProcunto(Producto) {
+    function datosProcunto(producto) {
         // console.log(Producto);
     
         //objeto del producto seleccionado
         const infoProducto = {
-            imagen: Producto.querySelector("img").src,
-            titulo: Producto.querySelector("h5").textContent,
-            precio: Producto.querySelector(".precio span").textContent,
-            id: Producto.querySelector("a").getAttribute("data-id"),
+            imagen: producto.querySelector("img").src,
+            titulo: producto.querySelector("h5").textContent,
+            precio: producto.querySelector(".precio span").textContent,
+            id: producto.querySelector("a").getAttribute("data-id"),
             cantidad: 1
         }
     
-        // console.log(infoProducto);
-        // Agregar a productosCarrito
-    
-        productosCarrito = [...productosCarrito, infoProducto];
+        // Revisa producto duplicado en carrito
+
+        const duplicado = productosCarrito.some( producto => producto.id === infoProducto.id);
+        console.log(duplicado);
+        if(duplicado) {
+            // Actualiza cantidad
+            const Producto = productosCarrito.map( producto => {
+                if(producto.id === infoProducto.id) {
+                    producto.cantidad++;
+                    return producto;
+                } else {
+                    return producto;
+                }
+            } );
+            productosCarrito = [...Producto];
+        } else {
+        //Agregar a productosCarrito
+            productosCarrito = [...productosCarrito, infoProducto];
+        }
+
         console.log(productosCarrito);
         
         carritoHTML();
     }
     
-    // Carrito en HTML
+    // Muestra Carrito en HTML
     
     function carritoHTML () {
     
         limpiarHTML();
     
         productosCarrito.forEach( productocarrito => {
+            const {imagen, titulo, id, precio, cantidad} = productocarrito;
             const row = document.createElement("tr");
             row.innerHTML = `
+                <td>  
+                    <img src="${imagen}" width=100>
+                </td>
                 <td>
-                    ${productocarrito.titulo}
-                    ${productocarrito.id}
+                    ${titulo}
+                    ${id}
+                    ${precio}
+                    ${cantidad}
                 </td>
                 <td>
                     <a href="#" class="borrar-producto" data-id="${productocarrito.id}"> X </a>
@@ -86,6 +114,7 @@ window.onload = () => {
     
         //Storage
         aplicarStorage()
+        
     }
     
     function aplicarStorage() {
@@ -99,4 +128,4 @@ window.onload = () => {
     }
     }
     
-    }
+    
