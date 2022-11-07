@@ -1,4 +1,4 @@
-// window.onload = () => {}
+window.onload = () => {
 
     // variables
     
@@ -127,5 +127,4 @@
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }
     }
-    
-    
+}   
