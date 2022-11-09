@@ -27,7 +27,6 @@
             carritoHTML()
         });
         
-        
     }
     
     // Funciones
