@@ -47,7 +47,6 @@
             productosCarrito = productosCarrito.filter( producto => producto.id !== productoId);
             console.log(productosCarrito);
             carritoHTML ();
-            
         }
     }
     // Obteniendo datos del Producto
