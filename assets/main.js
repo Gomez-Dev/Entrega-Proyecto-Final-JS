@@ -1,4 +1,4 @@
-window.onload = () => {
+    window.onload = () => {}
 
     // variables
     
@@ -10,6 +10,7 @@ window.onload = () => {
     
     
     // Agrega y elimina Productos del carrito
+    
     registrarEventListeners();
     function registrarEventListeners() {
         listaCarrito.addEventListener("click", agregarProductos);
@@ -23,8 +24,10 @@ window.onload = () => {
     
         document.addEventListener("DOMContentLoaded", () => {
             productosCarrito = JSON.parse( localStorage.getItem ("carrito")) || [];
-        })
-        carritoHTML();
+            carritoHTML()
+        });
+        
+        
     }
     
     // Funciones
@@ -99,12 +102,9 @@ window.onload = () => {
                 <td>  
                     <img src="${imagen}" width=100>
                 </td>
-                <td>
-                    ${titulo}
-                    ${id}
-                    ${precio}
-                    ${cantidad}
-                </td>
+                <td>${titulo}</td>
+                <td>${precio}</td>
+                <td>${cantidad}</td>
                 <td>
                     <a href="#" class="borrar-producto" data-id="${productocarrito.id}"> X </a>
                 </td>
@@ -127,4 +127,4 @@ window.onload = () => {
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }
     }
-}   
+  
