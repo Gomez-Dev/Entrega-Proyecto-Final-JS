@@ -1,4 +1,4 @@
-    window.onload = () => {}
+    window.onload = () => {
 
     // variables
     
@@ -26,7 +26,7 @@
             productosCarrito = JSON.parse( localStorage.getItem ("carrito")) || [];
             carritoHTML()
         });
-        
+
     }
     
     // Funciones
@@ -49,6 +49,29 @@
             carritoHTML ();
         }
     }
+
+    // finalizar compra
+    function fin() {
+        Swal.fire({
+            title: '¿Desea finalizar su compra?',
+            text: "Elija una opción!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, deseo finalizar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Compra Finalizada',
+                'Muchas Gracias!.',
+                'success'
+              )
+            }
+          })
+
+    }
+
     // Obteniendo datos del Producto
     function datosProcunto(producto) {
         // console.log(Producto);
@@ -78,7 +101,7 @@
             } );
             productosCarrito = [...Producto];
         } else {
-        //Agregar a productosCarrito
+        //Agregar a productos al array de carrito
             productosCarrito = [...productosCarrito, infoProducto];
         }
 
@@ -94,7 +117,7 @@
         limpiarHTML();
     
         productosCarrito.forEach( productocarrito => {
-            const {imagen, titulo, id, precio, cantidad} = productocarrito;
+            const {imagen, titulo, precio, cantidad} = productocarrito;
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>  
@@ -125,4 +148,14 @@
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }
     }
-  
+
+    obtenerDatos()
+
+    function obtenerDatos(){
+        const url = "./assets/datosp.json"
+    
+        fetch(url)
+            .then(response=> response.json())
+            .then(datos=> console.table(datos))
+    }
+}  

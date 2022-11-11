@@ -1,0 +1,59 @@
+[
+
+    {
+        "id": 1,
+        "nombre":"AX-PRO",
+        "precio":12000,
+        "img":"./assets/img/Producto1.jpg"
+    },
+
+    {
+        "id": 2,
+        "nombre":"EZVIZ C3A",
+        "precio":4200,
+        "img":"./assets/img/Producto2.jpg"
+    },
+
+    {
+        "id": 3,
+        "nombre":"Hik 8 Camaras",
+        "precio":45000,
+        "img":"./assets/img/Producto3.jpg"
+    },
+
+    {
+        "id": 4,
+        "nombre":"Kit ColorVu 4 Camaras",
+        "precio":39000,
+        "img":"./assets/img/Producto4.jpg"
+    },
+
+    {
+        "id": 5,
+        "nombre":"Kit Alarma FULL",
+        "precio":97000,
+        "img":"./assets/img/Producto5.jpg"
+    },
+
+    {
+        "id": 6,
+        "nombre":"kIT Alarma Basica",
+        "precio":51000,
+        "img":"./assets/img/Producto6.jpg"
+    },
+
+    {
+        "id": 7,
+        "nombre":"Ezviz Wi-Fi",
+        "precio":62000,
+        "img":"./assets/img/Producto7.jpg"
+    },
+
+    {
+        "id": 8,
+        "nombre":"Ezviz 360",
+        "precio":12000,
+        "img":"./assets/img/Producto8.jpg"
+    }
+
+]

@@ -13,20 +13,6 @@
 <!--Comienzo del Header-->
 
 <header>
-  <!-- <ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled">Disabled</a>
-    </li>
-  </ul> -->
   <!-- Agregando el Carrito -->
   <div class="container">
     <div class="row">
@@ -52,8 +38,14 @@
                                     </thead>
                                     <tbody></tbody>
                                 </table>
-
-                                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                <button href="#" type="button" class="btn btn-primary" id="vaciar-carrito" class="button u-full-width">
+                                  Vaciar Carrito
+                                </button>
+                                <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
+                                <button onclick="fin()" type="button" class="btn btn-primary" id="finalizar-compra"
+                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                  Finalizar Compra
+                                </button>
                         </div>
                 </li>
             </ul>
@@ -67,73 +59,73 @@
     <div id="lista-productos" class="container">
         <div class="seguridad">
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/D_NQ_NP_963820-MLA49967077030_052022-W.jpg" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">AX-PRO</h5>
-                  <p class="precio">Some quick example text.  <span class="u-pull-right ">$150</span></p>
+                  <p class="precio">Precio Producto. <br> <span class="u-pull-right ">$150</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="1">Agregar al Carrito</a>
                 </div>
             </div>
         
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/EZVIZ-C3A-IndoorOutdoor-Battery-Camera-Kisumu.jpg" class="imagen-productos" alt="...">
+                <img src="./assets/img/Producto2.jpg" class="imagen-productos" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">EZVIZ C3A</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="2">Agregar al Carrito</a>
                 </div>
             </div>
         
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/kit-1.png" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto3.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Hik 8 Camaras</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="3">Agregar al Carrito</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/kit-2.png" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto4.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Kit ColorVu 4 Camaras</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="4">Agregar al Carrito</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/kit-3.png" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto5.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Kit Alarma FULL</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="5">Agregar al Carrito</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/kit-4.jpg" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto6.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">kIT Alarma Basica</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="6">Agregar al Carrito</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/LU-EZ-KIT-107.jpg" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto7.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="7">Agregar al Carrito</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./assets/img/noticias_ezvizC8C_1.jpg" class="card-img-top" alt="...">
+                <img src="./assets/img/Producto8.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
-                  <p class="precio">Some quick example text.<span class="u-pull-right ">$180,000</span></p>
+                  <p class="precio">Precio Producto. <br><span class="u-pull-right ">$180,000</span></p>
                   <a href="#" class="btn btn-primary agregar-carrito" data-id="8">Agregar al Carrito</a>
                 </div>
             </div>
@@ -142,9 +134,8 @@
     </div> 
 </main>
       
-
-    <script src="./assets/main.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
